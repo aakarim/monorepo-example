@@ -1,0 +1,6 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/aakarim/monorepo-example
+gazelle(name = "gazelle")
+
+exports_files(["execctx.json"])

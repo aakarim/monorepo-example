@@ -1,0 +1,3 @@
+package kafka
+
+kafkaUrl: string

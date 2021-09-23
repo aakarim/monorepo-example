@@ -1,0 +1,27 @@
+load("@com_github_seh_rules_cue//cue:cue.bzl", "cue_exported_files")
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "cfg",
+    srcs = ["embedded.go"],
+    embedsrcs = ["execctx.yaml"],
+    importpath = "github.com/aakarim/monorepo-example/go/pkg/cfg",
+    visibility = ["//visibility:public"],
+    deps = ["@in_gopkg_yaml_v2//:go_default_library"],
+)
+
+
+cue_exported_files(
+    name = "execctx",
+    srcs = [
+        "//:execctx.json",
+        "//cfg/execctx:base.cue",
+    ],
+    module = "//cue.mod",
+    output_format = "yaml",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//cfg/env:pkg",
+        "//cfg/kafka:pkg",
+    ],
+)

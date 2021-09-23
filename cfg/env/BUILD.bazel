@@ -1,0 +1,9 @@
+load("@com_github_seh_rules_cue//cue:cue.bzl", "cue_instance")
+
+cue_instance(
+    name = "pkg",
+    package_name = "env",
+    srcs = ["base.cue"],
+    ancestor = "//cue.mod",
+    visibility = ["//visibility:public"],
+)

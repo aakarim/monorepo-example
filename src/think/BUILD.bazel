@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "think_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/aakarim/monorepo-example/src/think",
+    visibility = ["//visibility:private"],
+    deps = ["//go/pkg/cfg"],
+)
+
+go_binary(
+    name = "think",
+    embed = [":think_lib"],
+    visibility = ["//visibility:public"],
+)
