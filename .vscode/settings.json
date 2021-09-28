@@ -1,0 +1,4 @@
+{
+  // otherwise you get --output_path errors
+  "bazel.queriesShareServer": true
+}
