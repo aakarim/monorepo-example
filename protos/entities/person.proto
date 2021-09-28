@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package monorepo_example.entities;
+
+option go_package = "github.com/aakarim/monorepo-example/protos/entities";
+
+message Person {
+    int64 id = 1;
+    string name = 2;
+}
+

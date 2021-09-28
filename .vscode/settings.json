@@ -1,0 +1,43 @@
+{
+  // see https://github.com/bazelbuild/rules_go/wiki/Editor-setup
+ "go.goroot": "${workspaceFolder}/bazel-monorepo-example/external/go_sdk",
+  "go.toolsEnvVars": {
+    "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
+  },
+  "go.enableCodeLens": {
+    "references": false,
+    "runtest": false
+  },
+  "gopls": {
+    "build.directoryFilters": [
+      "-bazel-bin",
+      "-bazel-out",
+      "-bazel-testlogs",
+      "-bazel-monorepo-example",
+    ],
+    "formatting.gofumpt": true,
+    "formatting.local": "github.com/aakarim/monorepo-example",
+    "ui.completion.usePlaceholders": true,
+    "ui.semanticTokens": true,
+    "ui.codelenses": {
+      "gc_details": false,
+      "regenerate_cgo": false,
+      "generate": false,
+      "test": false,
+      "tidy": false,
+      "upgrade_dependency": false,
+      "vendor": false
+    },
+  },
+  "go.useLanguageServer": true,
+  "go.buildOnSave": "off",
+  "go.lintOnSave": "off",
+  "go.vetOnSave": "off",
+  "bazel.buildifierFixOnFormat": true,
+  "files.watcherExclude": {
+    "**/execroot/**": true
+  },
+  // otherwise you get --output_path errors
+  "bazel.queriesShareServer": true,
+  "bazel.enableCodeLens": true
+}

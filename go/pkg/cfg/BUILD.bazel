@@ -7,9 +7,8 @@ go_library(
     embedsrcs = ["execctx.yaml"],
     importpath = "github.com/aakarim/monorepo-example/go/pkg/cfg",
     visibility = ["//visibility:public"],
-    deps = ["@in_gopkg_yaml_v2//:go_default_library"],
+    deps = ["@in_gopkg_yaml_v2//:yaml_v2"],
 )
-
 
 cue_exported_files(
     name = "execctx",
