@@ -1,4 +1,0 @@
-{
-    "env": "dev",
-    "kafkaUrl": "kafka:9092"
-}
